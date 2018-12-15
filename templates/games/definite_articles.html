@@ -1,0 +1,34 @@
+{% extends 'koine_greek_games/base.html' %}
+
+{% block title %}Definite Articles Game - Koine Greek Games{% endblock %}
+
+{% block content %}
+    <br>
+    <h2>Definite Articles Game</h2>
+
+    This game will help you learn how to classify definite articles based on gender, case, and number.
+
+    <br><br>
+
+    <button class="button">Get started</button>
+
+    <div id="app" style="background-color: #ccc;">
+        Question: ${ getQuestion().q }
+
+        <div v-for="answer in possibleAnswers">
+            <button class="button secondary" v-on:click="checkAnswer(answer)">${ answer }</button>
+        </div>
+
+        <div v-if="status === 'correct'">
+            Nicely done!
+            <br>
+            <button class="button secondary" v-on:click="nextQuestion">Next ></button>
+        </div>
+        <div v-if="status === 'incorrect'">
+            Sorry, that's not correct. Try again.
+        </div>
+    </div>
+
+    {% load static %}
+    <script src="{% static "definiteArticles.js" %}"></script>
+{% endblock %}
