@@ -1,3 +1,56 @@
 .error {
     color: red;
 }
+
+/* This is used to style buttons which are used to get input from the user*/
+.questionButton {
+    margin-right: 3em;
+}
+
+.nominative {
+    color: black;
+    background-color: #f8f8f7;
+    border: 3px solid #2d2d2d;
+    font-weight: bold;
+}
+
+.nominative:hover, .nominative:focus {
+    background-color: black;
+    color: #f8f8f7;
+}
+
+.genitive {
+    color: red;
+    background-color: #f8f8f7;
+    border: 3px solid #2d2d2d;
+    font-weight: bold;
+}
+
+.genitive:hover, .genitive:focus {
+    color: #f8f8f7;
+    background-color: red;
+}
+
+.dative {
+    color: green;
+    background-color: #f8f8f7;
+    border: 3px solid #2d2d2d;
+    font-weight: bold;
+}
+
+.dative:hover, .dative:focus  {
+    color: #f8f8f7;
+    background-color: green;
+}
+
+.accusative {
+    color: blue;
+    background-color: #f8f8f7;
+    border: 3px solid #2d2d2d;
+    font-weight: bold;
+}
+
+.accusative:hover, .accusative:focus  {
+    color: #f8f8f7;
+    background-color: blue;
+}

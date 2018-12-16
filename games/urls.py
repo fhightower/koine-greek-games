@@ -6,5 +6,5 @@ from django.conf.urls import url
 from . import views
 
 urlpatterns = [
-    url(r'^definiteArticles/', views.DefiniteArticles.as_view(), name='definite_articles')
+    url(r'^definiteArticleCases/', views.DefiniteArticles.as_view(), name='definite_article_cases')
 ]

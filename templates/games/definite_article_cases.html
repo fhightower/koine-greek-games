@@ -1,0 +1,39 @@
+{% extends 'koine_greek_games/base.html' %}
+
+{% block title %}Definite Articles Game - Koine Greek Games{% endblock %}
+
+{% block content %}
+    <h2>Definite Article Case Identification Game</h2>
+    <br>
+
+    <div id="app">
+        <div v-if="!gameStarted">
+            This game will help you learn how to identify the case of the given definite article.
+
+            <br><br>
+
+            <button class="button" v-on:click="gameStarted = true">Get started!</button>
+        </div>
+        <div v-if="gameStarted">
+            <h3>Select the case for this definite article: <b>${ getQuestion() }</b></h3>
+
+            <br>
+
+            <div v-for="answer in possibleAnswers" style="display: inline;">
+                <button class="button questionButton" :class="answer" v-on:click="checkAnswer(answer)">${ answer | titleCase }</button>
+            </div>
+
+            <div v-if="status === 'correct'">
+                ${ getSuccessMessage() }
+                <br>
+                <button class="button secondary" v-on:click="nextQuestion">Next ></button>
+            </div>
+            <div v-if="status === 'incorrect'">
+                Sorry, that's not correct. Try again.
+            </div>
+        </div>
+    </div>
+
+    {% load static %}
+    <script src="{% static "definiteArticleCaseIdentification.js" %}"></script>
+{% endblock %}
