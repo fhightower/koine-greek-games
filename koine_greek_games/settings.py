@@ -26,7 +26,7 @@ SECRET_KEY = 'abcdefg'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost']
+ALLOWED_HOSTS = ['localhost', 'koine-games.herokuapp.com', 'koine.hightower.space']
 
 
 # Application definition
