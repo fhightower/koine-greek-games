@@ -2,6 +2,6 @@ dj-database-url==0.4.1
 Django==1.11.1
 djangorestframework
 gunicorn==19.6.0
-psycopg2-binary==2.7.1
+psycopg2-binary
 pytest-django
 whitenoise==3.2
