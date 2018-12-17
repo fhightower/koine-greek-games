@@ -1,0 +1,50 @@
+{% extends 'koine_greek_games/base.html' %}
+
+{% block title %}Noun Case Finder 1 Game - Koine Greek Games{% endblock %}
+
+{% block content %}
+    <h2>Noun Case Finder 1</h2>
+    <br>
+
+    <style>/*
+        button {
+            text-decoration: underline;
+        }*/
+    </style>
+
+    <div id="app">
+        <div v-if="!gameStarted">
+            In this challenge, you must identify all nouns of the given case in the given text.
+
+            <br><br>
+
+            <button class="button" v-on:click="gameStarted = true">Get started!</button>
+        </div>
+        <div v-if="gameStarted">
+            <span v-html="getQuestion()"></span><br><br>
+            <span v-for="word in getPassage()"><button v-on:click="selectedWords.push(word)">${ word }</button>&nbsp;</span>
+
+            <div v-if="selectedWords.length > 0">
+                <br>
+                You have selected (click on any of the words below to remove it):
+                <ul>
+                    <li v-for="word in selectedWords">${ word } <i class="fa fa-trash" v-on:click="removeWord(word)"></i></li>
+                </ul>
+
+                <button class="button secondary" v-on:click="checkAnswers">Submit answer</button>
+            </div>
+
+            <div v-if="status === 'correct'">
+                'Well done! You're right.
+                <br>
+                <button class="button secondary" v-on:click="nextQuestion">Next ></button>
+            </div>
+            <div v-if="status === 'incorrect'">
+                Sorry, that's not correct. ${ errorMessage }
+            </div>
+        </div>
+    </div>
+
+    {% load static %}
+    <script src="{% static "nounCaseFinder1.js" %}"></script>
+{% endblock %}

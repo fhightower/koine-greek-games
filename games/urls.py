@@ -6,5 +6,6 @@ from django.conf.urls import url
 from . import views
 
 urlpatterns = [
-    url(r'^definiteArticleCases/', views.DefiniteArticles.as_view(), name='definite_article_cases')
+    url(r'^definiteArticleCases/', views.DefiniteArticleCaseIdentification.as_view(), name='definite_article_cases'),
+    url(r'^nounCaseFinding1/', views.NounCaseFinder1.as_view(), name='noun_case_finder_1')
 ]
