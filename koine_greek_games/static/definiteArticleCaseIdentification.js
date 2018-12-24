@@ -9,6 +9,7 @@ var app = new Vue({
     status: '',
     currentQuestionIndex: 0,
     gameStarted: false,
+    // TODO: τό and τά need to be changed to accept both nominative and accusative as answers
     questions: [{
       q: 'ὁ',
       a: 'nominative',

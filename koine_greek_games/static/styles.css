@@ -4,14 +4,15 @@
 
 /* This is used to style buttons which are used to get input from the user*/
 .questionButton {
+    color: black;
     margin-right: 3em;
+    background-color: #f8f8f7;
+    border: 3px solid #2d2d2d;
+    font-weight: bold;
 }
 
 .nominative {
     color: black;
-    background-color: #f8f8f7;
-    border: 3px solid #2d2d2d;
-    font-weight: bold;
 }
 
 .nominative:hover, .nominative:focus {
@@ -21,9 +22,6 @@
 
 .genitive {
     color: red;
-    background-color: #f8f8f7;
-    border: 3px solid #2d2d2d;
-    font-weight: bold;
 }
 
 .genitive:hover, .genitive:focus {
@@ -33,9 +31,6 @@
 
 .dative {
     color: green;
-    background-color: #f8f8f7;
-    border: 3px solid #2d2d2d;
-    font-weight: bold;
 }
 
 .dative:hover, .dative:focus  {
@@ -45,9 +40,6 @@
 
 .accusative {
     color: blue;
-    background-color: #f8f8f7;
-    border: 3px solid #2d2d2d;
-    font-weight: bold;
 }
 
 .accusative:hover, .accusative:focus  {
