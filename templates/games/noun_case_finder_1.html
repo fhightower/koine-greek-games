@@ -17,10 +17,12 @@
         <div v-if="gameStarted">
             <span v-html="getQuestion()"></span><br><br>
             <span v-for="word in getPassage()"><button v-on:click="selectedWords.push(word)">${ word }</button>&nbsp;</span>
+            <br><br>
+            <p class="float-right"><i>${ getAddress() }</i></p>
 
             <div v-if="selectedWords.length > 0">
                 <br>
-                You have selected (click on any of the words below to remove it):
+                You have selected (click the <i class="fa fa-trash"></i> to remove it):
                 <ul>
                     <li v-for="word in selectedWords">${ word } <i class="fa fa-trash" v-on:click="removeWord(word)"></i></li>
                 </ul>
@@ -29,7 +31,7 @@
             </div>
 
             <div v-if="status === 'correct'">
-                'Well done! You're right.
+                Well done! You're right.
                 <br>
                 <button class="button secondary" v-on:click="nextQuestion">Next ></button>
             </div>

@@ -14,10 +14,12 @@ var app = new Vue({
     errorMessage: '',
     passages: [{
       passage: 'Οὕτως γὰρ ἠγάπησεν ὁ Θεὸς τὸν κόσμον , ὥστε τὸν Υἱὸν τὸν μονογενῆ ἔδωκεν , ἵνα πᾶς ὁ πιστεύων εἰς αὐτὸν μὴ ἀπόληται ἀλλ’ ἔχῃ ζωὴν αἰώνιον.',
+      address: 'Ἰωάννης (John) 3:16',
       questions: ['Find all <span class="nominative">nominative</span> nouns (and their articles) in the text', 'Find all <span class="accusative">accusative</span> nouns (and their articles) in the text'],
       answers: [['ὁ', 'Θεὸς'], ['τὸν', 'κόσμον', 'τὸν', 'Υἱὸν', 'ζωὴν']]
     }, {
       passage: 'καὶ λαβὼν ἄρτον εὐχαριστήσας ἔκλασεν καὶ ἔδωκεν αὐτοῖς λέγων · Τοῦτό ἐστιν τὸ σῶμά μου τὸ ὑπὲρ ὑμῶν διδόμενον · τοῦτο ποιεῖτε εἰς τὴν ἐμὴν ἀνάμνησιν .',
+      address: 'λουκαν (Luke) 22:19',
       questions: ['Find all <span class="nominative">nominative</span> nouns (and their articles) in the text', 'Find all <span class="accusative">accusative</span> nouns (and their articles) in the text'],
       answers: [['τὸ', 'σῶμά'], ['ἄρτον', 'τὴν', 'ἀνάμνησιν']]
     }]
@@ -25,6 +27,9 @@ var app = new Vue({
   methods: {
     getPassage: function() {
       return this.passages[this.currentPassageIndex].passage.split(' ');
+    },
+    getAddress: function() {
+      return this.passages[this.currentPassageIndex].address;
     },
     getQuestion: function() {
       return this.passages[this.currentPassageIndex].questions[this.currentQuestionIndex];
