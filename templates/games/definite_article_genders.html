@@ -1,21 +1,21 @@
 {% extends 'koine_greek_games/base.html' %}
 
-{% block title %}Definite Articles Case Game - Koine Greek Games{% endblock %}
+{% block title %}Definite Articles Gender Game - Koine Greek Games{% endblock %}
 
 {% block content %}
-    <h2>Definite Article Case Identification Game</h2>
+    <h2>Definite Article Gender Identification Game</h2>
     <br>
 
     <div id="app">
         <div v-if="!gameStarted">
-            This game will help you learn how to identify the case of the given definite article.
+            This game will help you learn how to identify the gender of the given definite article.
 
             <br><br>
 
             <button class="button" v-on:click="gameStarted = true">Get started!</button>
         </div>
         <div v-if="gameStarted">
-            <h3>Select the case for this definite article: <b>${ getQuestion() }</b></h3>
+            <h3>Select the gender for this definite article: <b>${ getQuestion() }</b></h3>
 
             <br>
 
@@ -35,5 +35,5 @@
     </div>
 
     {% load static %}
-    <script src="{% static "definiteArticleCaseIdentification.js" %}"></script>
+    <script src="{% static "definiteArticleGenderIdentification.js" %}"></script>
 {% endblock %}
